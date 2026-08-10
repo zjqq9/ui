@@ -1,4 +1,3 @@
-
 local Utility = {}
 local TweenService = game:GetService("TweenService")
 
@@ -3203,7 +3202,6 @@ function UI:CreateWindow(Config)
 
             local clampedDefault = math.clamp(Slider.Value.Default, Slider.Value.Min, Slider.Value.Max)
             Value = clampedDefault
-                        ) and input.UserInputType == Enum.UserInputType.MouseButton1 or
 
             SliderTRG.InputBegan:Connect(function(input)
                 if Slider.Locked then return end
