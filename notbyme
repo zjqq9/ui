@@ -4377,18 +4377,20 @@ function UI:CreateWindow(Config)
         task.wait(0.3)
         Main.Visible = false
         
-        local isTouch = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
+        local isTouch = UserInputService.TouchEnabled
         if isTouch then
             MobileBtn.Visible = true
         else
             MinzUI.Visible = true
         end
 
-        UI:Notification({
-            Title = "UI Minimised",
-            Desc = isTouch and "Tap Aero button to reopen" or "Press Right Shift to reopen",
-            Duration = 4
-        })
+        pcall(function()
+            UI:Notification({
+                Title = "UI Minimised",
+                Desc = isTouch and "Tap Aero button to reopen" or "Press Right Shift to reopen",
+                Duration = 4
+            })
+        end)
     end    
 
     WinElements.ImageButton.MouseButton1Click:Connect(function()
