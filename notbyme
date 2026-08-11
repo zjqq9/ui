@@ -77,23 +77,23 @@ VexUI.DefaultProps = {
 VexUI.Themes = {
     Dark = {
         Name = "Dark",
-        Background = Color3.fromRGB(15, 15, 15),
-        SideBar = Color3.fromRGB(25, 25, 25),
+        Background = Color3.fromRGB(0, 0, 0),
+        SideBar = Color3.fromRGB(0, 0, 0),
         Text = Color3.fromRGB(255, 255, 255),
-        ElementColor = Color3.fromRGB(38, 38, 38),
-        Outline = Color3.fromRGB(57, 57, 57),
-        Placeholder = Color3.fromRGB(15, 15, 15),
+        ElementColor = Color3.fromRGB(10, 10, 10),
+        Outline = Color3.fromRGB(0, 0, 0),
+        Placeholder = Color3.fromRGB(0, 0, 0),
         IconColor = Color3.fromRGB(255, 255, 255),
     },
     Light = {
         Name = "Light",
         Background = Color3.fromRGB(245, 245, 245),
         SideBar = Color3.fromRGB(235, 235, 235),
-        Text = Color3.fromRGB(20, 20, 20),
+        Text = Color3.fromRGB(0, 0, 0),
         ElementColor = Color3.fromRGB(200, 200, 200),
         Outline = Color3.fromRGB(220, 220, 220),
         Placeholder = Color3.fromRGB(180, 180, 180),
-        IconColor = Color3.fromRGB(20, 20, 20),
+        IconColor = Color3.fromRGB(0, 0, 0),
     },
     Forest = {
         Name = "Forest",
@@ -785,7 +785,7 @@ function UI:CreateWindow(Config)
             Active = true,
             AnchorPoint = Vector2.new(0.5, 0.5),
             Position = UDim2.new(0.5, 0, 0.5, 0),
-            BackgroundColor3 = Color3.fromRGB(25, 25, 25),
+            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
             ThemeID = {
                 BackgroundColor3 = "Background"
             }
@@ -799,7 +799,7 @@ function UI:CreateWindow(Config)
                 Active = true,
                 AnchorPoint = Vector2.new(0.04, 0.5),
                 Position = UDim2.new(0.04, 0, 0.5, 0),
-                BackgroundColor3 = Color3.fromRGB(25, 25, 25),
+                BackgroundColor3 = Color3.fromRGB(0, 0, 0),
                 ThemeID = {
                     BackgroundColor3 = "SideBar"
                 },
@@ -1082,7 +1082,7 @@ function UI:CreateWindow(Config)
         Position = UDim2.new(0.5, 0, 0.5, 0),
         BackgroundTransparency = (Window.Transparent and 0.1 or 0),
         BorderSizePixel = 0,
-        BackgroundColor3 = Color3.fromRGB(25, 25, 25),
+        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
         Parent = UIScreen,
         ThemeID = {
             BackgroundColor3 = "Background"
@@ -1120,7 +1120,7 @@ function UI:CreateWindow(Config)
         Parent = Main.Frame,
         Size = UDim2.new(0, Window.Size.X.Offset - 182 + 133 + 5, 0, Window.Topbar.Height), --Window.Size.X.Offset - 10 + 133 + 5
         --ClipsDescendants = true,
-        BackgroundColor3 = Color3.fromRGB(33, 33, 33),
+        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
         BackgroundTransparency = 0.1,
         LayoutOrder = 1,
         Position = UDim2.new(0, 0, 0, 8),
@@ -1157,7 +1157,7 @@ function UI:CreateWindow(Config)
         VexUI:Create("Frame", {
             Size = UDim2.new(1, 0, 1, 0),
             --ClipsDescendants = true,
-            BackgroundColor3 = Color3.fromRGB(33, 33, 33),
+            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
             BackgroundTransparency = 1,
             LayoutOrder = 1,
             Position = UDim2.new(0, 0, 0, 0),
@@ -1243,7 +1243,7 @@ function UI:CreateWindow(Config)
         Parent = Main.Frame,
         Size = UDim2.new(0, 133, 0, Window.Topbar.Height),
         ClipsDescendants = true,
-        BackgroundColor3 = Color3.fromRGB(33, 33, 33),
+        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
         Visible = false,
         LayoutOrder = 2,
         BackgroundTransparency = 0.1,
@@ -1295,7 +1295,7 @@ function UI:CreateWindow(Config)
         Parent = Main.Frame,
         Size = UDim2.new(1, 0, 0, Window.Topbar.Height),
         --ClipsDescendants = true,
-        BackgroundColor3 = Color3.fromRGB(33, 33, 33),
+        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
         LayoutOrder = 3,
         BackgroundTransparency = 0.1,
         Position = UDim2.new(0, 0, 0, 8),
@@ -1504,7 +1504,7 @@ function UI:CreateWindow(Config)
                         Parent = RowFrame,
                         LayoutOrder = colIndex,
                         Size = Width,
-                        BackgroundColor3 = Color3.fromRGB(45, 45, 45),
+                        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
                         AutoButtonColor = false,
                         Text = "",
                         ZIndex = 1002,
@@ -1569,7 +1569,7 @@ function UI:CreateWindow(Config)
             Size = UDim2.new(0, 27, 0, 27),
             BackgroundTransparency = 0.6,
             ClipsDescendants = true,
-            BackgroundColor3 = Color3.fromRGB(44, 44, 44),
+            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
             Active = true,
             LayoutOrder = TopBarButton.Order,
             Position = UDim2.new(0, 0, 0, 8),
@@ -1650,7 +1650,7 @@ function UI:CreateWindow(Config)
             Size = UDim2.new(0, 27, 0, 27),
             BackgroundTransparency = 0.6,
             ClipsDescendants = true,
-            BackgroundColor3 = Color3.fromRGB(44, 44, 44),
+            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
             Active = true,
             LayoutOrder = TopBarToggle.Order,
             Position = UDim2.new(0, 0, 0, 8),
@@ -1702,7 +1702,7 @@ function UI:CreateWindow(Config)
 
 		local function updateToggleState()
     		Utility:TweenObject(TopToggle, {BackgroundTransparency = TopBarToggle.Default and 0 or 0.6}, 0.2)
-            Utility:TweenObject(TopToggle, {BackgroundColor3 = (TopBarToggle.Default and TopBarToggle.EnableBackground and TopBarToggle.EnableBackground or Color3.fromRGB(44, 44, 44) or TopBarToggle.DisableBackground and TopBarToggle.DisableBackground or Color3.fromRGB(44, 44, 44))}, 0.2)
+            Utility:TweenObject(TopToggle, {BackgroundColor3 = (TopBarToggle.Default and TopBarToggle.EnableBackground and TopBarToggle.EnableBackground or Color3.fromRGB(0, 0, 0) or TopBarToggle.DisableBackground and TopBarToggle.DisableBackground or Color3.fromRGB(0, 0, 0))}, 0.2)
             Icon.Image = not TopBarToggle.Default and GetIcon(TopBarToggle.EnableIcon) or GetIcon(TopBarToggle.DisableIcon)
     		--Utility:TweenObject(ToggleScroll, {BackgroundColor3 = Toggle.Default and UI.Theme.ToggleModule.ScrollNew or UI.Theme.ToggleModule.Scroll}, 0.2)
     		task.spawn(function()
@@ -1832,7 +1832,7 @@ function UI:CreateWindow(Config)
         AnchorPoint = Vector2.new(0, 0.5),
         Size = UDim2.new(0, 27, 0, 25),
         ClipsDescendants = true,
-        BackgroundColor3 = Color3.fromRGB(25, 25, 25),
+        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
         Active = true,
         LayoutOrder = 3,
         Position = UDim2.new(0, 7, 0.5, 0),
@@ -1847,7 +1847,7 @@ function UI:CreateWindow(Config)
             Size = UDim2.new(0, 16, 0, 25),
             AnchorPoint = Vector2.new(1, 0.5),
             ClipsDescendants = true,
-            BackgroundColor3 = Color3.fromRGB(25, 25, 25),
+            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
             Active = true,
             LayoutOrder = 3,
             Position = UDim2.new(1, 0, 0.5, 0),
@@ -1903,7 +1903,7 @@ function UI:CreateWindow(Config)
         AnchorPoint = Vector2.new(0, 0.5),
         Size = UDim2.new(0, 75, 0, 25),
         ClipsDescendants = true,
-        BackgroundColor3 = Color3.fromRGB(25, 25, 25),
+        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
         Active = true,
         LayoutOrder = 3,
         Position = UDim2.new(0, 38, 0.5, 0),
@@ -1918,7 +1918,7 @@ function UI:CreateWindow(Config)
             Size = UDim2.new(0, 16, 0, 25),
             AnchorPoint = Vector2.new(0, 0.5),
             ClipsDescendants = true,
-            BackgroundColor3 = Color3.fromRGB(25, 25, 25),
+            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
             Active = true,
             LayoutOrder = 3,
             Position = UDim2.new(0, 0, 0.5, 0),
@@ -2043,7 +2043,7 @@ function UI:CreateWindow(Config)
             Size = UDim2.new(1, 0, 0, 0),
             AnchorPoint = Vector2.new(0, 0),
             Position = UDim2.new(0, 0, 0, 25),
-            BackgroundColor3 = Color3.fromRGB(25, 25, 25),
+            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
             Active = true,
             LayoutOrder = 3,
             BorderSizePixel = 0,
@@ -2206,7 +2206,7 @@ function UI:CreateWindow(Config)
         BorderSizePixel = 0,
         ZIndex = 3,
         BackgroundTransparency = (Window.Transparent and 1 or 0),
-        BackgroundColor3 = Color3.fromRGB(33, 33, 33),
+        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
         Parent = Main,
         ThemeID = {
             BackgroundColor3 = "SideBar"
@@ -2218,7 +2218,7 @@ function UI:CreateWindow(Config)
             BorderColor3 = Color3.new(0, 0, 0),
             BackgroundTransparency = (Window.Transparent and 1 or 0),
             Size = UDim2.new(0, 16, 0, 16),
-            BackgroundColor3 = Color3.fromRGB(33, 33, 33),
+            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
             BorderSizePixel = 0,
             ZIndex = 4,
             ThemeID = {
@@ -2231,7 +2231,7 @@ function UI:CreateWindow(Config)
             BackgroundTransparency = (Window.Transparent and 1 or 0),
             BorderColor3 = Color3.new(0, 0, 0),
             Size = UDim2.new(0, 16, 0, 16),
-            BackgroundColor3 = Color3.fromRGB(33, 33, 33),
+            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
             BorderSizePixel = 0,
             ZIndex = 4,
             ThemeID = {
@@ -2251,7 +2251,7 @@ function UI:CreateWindow(Config)
         BorderColor3 = Color3.new(0, 0, 0),
         ClipsDescendants = true,
         Size = UDim2.new(0, Window.SideBarWidth - 20, 0, 40),
-        BackgroundColor3 = Color3.fromRGB(33, 33, 33),
+        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
         ZIndex = 10,
         ThemeID = {
             BackgroundColor3 = "Background"
@@ -2389,7 +2389,7 @@ function UI:CreateWindow(Config)
             BorderColor3 = Color3.new(0, 0, 0),
             BackgroundTransparency = Tab.Border and 0.6 or 1,
             Size = UDim2.new(0, Window.SideBarWidth - 10, 0, 25),
-            BackgroundColor3 = Color3.fromRGB(59, 59, 59),
+            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
             BorderSizePixel = 0,
             ZIndex = 4,
             ThemeID = {
@@ -2492,7 +2492,7 @@ function UI:CreateWindow(Config)
             ClipsDescendants = true,
             BackgroundTransparency = 0.6,
             Size = UDim2.new(1, Window.Size.X.Offset-Window.SideBarWidth-8, 0, 0),
-            BackgroundColor3 = Color3.fromRGB(33, 33, 33),
+            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
             ZIndex = 4,
             ThemeID = {
                 BackgroundColor3 = "SideBar"
@@ -2621,7 +2621,7 @@ function UI:CreateWindow(Config)
                 ClipsDescendants = true,
                 BackgroundTransparency = 0.5,
                 Size = UDim2.new(0, ElementFrame.Size.X.Offset - 10, 0, Paragraph.SizeY),
-                BackgroundColor3 = Color3.fromRGB(43, 43, 43),
+                BackgroundColor3 = Color3.fromRGB(0, 0, 0),
                 BorderSizePixel = 0,
                 ZIndex = 15,
                 BackgroundColor3 = ResolvedColor,
@@ -3074,7 +3074,7 @@ function UI:CreateWindow(Config)
                 Parent = SliderElement,
                 AnchorPoint = Vector2.new(0.96, 0.5),
                 Position = UDim2.new(0.96, 0, 0.5, 0),
-                BackgroundColor3 = Color3.fromRGB(20, 20, 20),
+                BackgroundColor3 = Color3.fromRGB(0, 0, 0),
                 BackgroundTransparency = 0.5,
                 Size = UDim2.new(0, 29, 0, 22),
                 ClipsDescendants = true,
@@ -3317,7 +3317,7 @@ function UI:CreateWindow(Config)
 
             local DropFrame = VexUI:Create("Frame", {
                 Parent = DropDownElement,
-                BackgroundColor3 = Color3.fromRGB(43, 43, 43),
+                BackgroundColor3 = Color3.fromRGB(0, 0, 0),
                 BackgroundTransparency = 0.5,
                 BorderSizePixel = 0,
                 Size = UDim2.new(1, 0, 0, 40),
@@ -3408,7 +3408,7 @@ function UI:CreateWindow(Config)
                 Parent = DropFrame,
                 AnchorPoint = Vector2.new(1, 0.5),
                 Position = UDim2.new(1, -10, 0.5, 0),
-                BackgroundColor3 = Color3.fromRGB(20, 20, 20),
+                BackgroundColor3 = Color3.fromRGB(0, 0, 0),
                 BackgroundTransparency = 0.5,
                 Size = UDim2.new(0, 119, 0, 25),
                 ZIndex = 15,
@@ -3599,7 +3599,7 @@ function UI:CreateWindow(Config)
                     local DropElement = VexUI:Create("Frame", {
                         Parent = ScrollingFrame,
                         Name = Item,
-                        BackgroundColor3 = Color3.fromRGB(43, 43, 43),
+                        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
                         BackgroundTransparency = 0.5,
                         BorderSizePixel = 0,
                         Size = UDim2.new(1, -4, 0, 24),
@@ -3742,7 +3742,7 @@ function UI:CreateWindow(Config)
                 Parent = InputElement,
                 AnchorPoint = Vector2.new(1, 0.5),
                 Position = UDim2.new(1, -10, 0.5, 0),
-                BackgroundColor3 = Color3.fromRGB(20, 20, 20),
+                BackgroundColor3 = Color3.fromRGB(0, 0, 0),
                 BackgroundTransparency = 0.5,
                 BorderSizePixel = 0,
                 Size = UDim2.new(0, Input.MaxSymbols and 130 or 130, 0, 25),
@@ -3893,7 +3893,7 @@ function UI:CreateWindow(Config)
                 Parent = KeybindElement,
                 AnchorPoint = Vector2.new(1, 0.5),
                 Position = UDim2.new(1, -10, 0.5, 0),
-                BackgroundColor3 = Color3.fromRGB(20, 20, 20),
+                BackgroundColor3 = Color3.fromRGB(0, 0, 0),
                 BackgroundTransparency = 0,
                 BorderSizePixel = 0,
                 Size = UDim2.new(0, 28, 0, 20),
@@ -4567,7 +4567,7 @@ function UI:Notification(Config)
 
         local NotifFrame = VexUI:Create("Frame", {
             Parent = Island,
-            BackgroundColor3 = Color3.fromRGB(20, 20, 20),
+            BackgroundColor3 = Color3.fromRGB(0, 0, 0),
             BackgroundTransparency = 0.2,
             BorderSizePixel = 0,
             ClipsDescendants = true,
