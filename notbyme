@@ -4303,12 +4303,35 @@ function UI:CreateWindow(Config)
         end
         return Section
     end
+    -- Create Mobile Minimised Draggable Button
+    local MobileBtn = VexUI:Create("TextButton", {
+        Parent = UIScreen,
+        Name = "AeroMobileMinimizeBtn",
+        Size = UDim2.new(0, 70, 0, 32),
+        Position = UDim2.new(0.1, 0, 0.2, 0),
+        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+        BackgroundTransparency = 0.2,
+        Text = "Aero",
+        TextColor3 = Color3.fromRGB(255, 255, 255),
+        TextSize = 14,
+        FontFace = Font.new([[rbxassetid://12187365364]], Enum.FontWeight.Bold, Enum.FontStyle.Normal),
+        ZIndex = 999,
+        Visible = false,
+        Active = true,
+        AutoButtonColor = false,
+    }, {
+        VexUI:Create("UICorner", { CornerRadius = UDim.new(0, 10) }),
+        Utility:GlassStroke("Outline", 1),
+    })
+    enableDragging(MobileBtn)
+
     function Window:Open()
         Island.Visible = false
         Utility:TweenObject(Island, {Position = UDim2.new(0.5, 0, -0.2, 0)}, 0.3)
 
         Window.IslandOpen = true
         Main.Visible = true
+        MobileBtn.Visible = false
         Window.Default = "Default"
         Utility:TweenObject(TabFrame, {Size = UDim2.new(0, Window.SideBarWidth, 0, Window.Size.Y.Offset - Window.Topbar.Height - 10)}, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
         Utility:TweenObject(TabFrame, {BackgroundTransparency = 0}, 0.3, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
@@ -4353,7 +4376,19 @@ function UI:CreateWindow(Config)
         end)
         task.wait(0.3)
         Main.Visible = false
-        MinzUI.Visible = true
+        
+        local isTouch = UserInputService.TouchEnabled and not UserInputService.KeyboardEnabled
+        if isTouch then
+            MobileBtn.Visible = true
+        else
+            MinzUI.Visible = true
+        end
+
+        VexUI:Notification({
+            Title = "UI Minimised",
+            Desc = isTouch and "Tap Aero button to reopen" or "Press Right Shift to reopen",
+            Duration = 4
+        })
     end    
 
     WinElements.ImageButton.MouseButton1Click:Connect(function()
@@ -4363,6 +4398,12 @@ function UI:CreateWindow(Config)
     end)
 
     MinzUI.MouseButton1Click:Connect(function()
+        if not Window.IslandOpen then
+            Window:Open()
+        end
+    end)
+
+    MobileBtn.MouseButton1Click:Connect(function()
         if not Window.IslandOpen then
             Window:Open()
         end
@@ -4403,7 +4444,7 @@ function UI:CreateWindow(Config)
     local TogValue = true
     game:GetService("UserInputService").InputBegan:Connect(function(input, i)
         if not i then
-            if input.KeyCode == Window.ToggleKey then
+            if input.KeyCode == Enum.KeyCode.RightShift or input.KeyCode == Window.ToggleKey then
                 if not Window.IslandOpen then
                     Window:Open()
                 else
