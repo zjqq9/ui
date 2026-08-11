@@ -1121,8 +1121,8 @@ function UI:CreateWindow(Config)
     local TitleLabel = Instance.new("TextLabel")
     TitleLabel.Name = "AeroTitle"
     TitleLabel.Text = Window.Name
-    TitleLabel.Size = UDim2.new(1, -140, 0, 35)
-    TitleLabel.Position = UDim2.new(0, 0, 0, 8)
+    TitleLabel.Size = UDim2.new(1, 0, 0, 40)
+    TitleLabel.Position = UDim2.new(0, 0, 0, 6)
     TitleLabel.BackgroundTransparency = 1
     TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
     TitleLabel.TextSize = 16
@@ -4304,7 +4304,7 @@ function UI:CreateWindow(Config)
         return Section
     end
     function Window:Open()
-        Island.Visible = true
+        Island.Visible = false
         Utility:TweenObject(Island, {Position = UDim2.new(0.5, 0, -0.2, 0)}, 0.3)
 
         Window.IslandOpen = true
@@ -4331,7 +4331,7 @@ function UI:CreateWindow(Config)
         MinzUI.Visible = false
     end
     function Window:Close()
-        Island.Visible = true
+        Island.Visible = false
         Utility:TweenObject(Island, {Position = UDim2.new(0.5, 0, -0.08, 0)}, 0.3)
 
         Window.IslandOpen = false
