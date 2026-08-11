@@ -81,7 +81,7 @@ VexUI.Themes = {
         SideBar = Color3.fromRGB(0, 0, 0),
         Text = Color3.fromRGB(255, 255, 255),
         ElementColor = Color3.fromRGB(30, 30, 30),
-        Outline = Color3.fromRGB(55, 55, 55),
+        Outline = Color3.fromRGB(30, 100, 200),
         Placeholder = Color3.fromRGB(0, 0, 0),
         IconColor = Color3.fromRGB(255, 255, 255),
     },
