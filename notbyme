@@ -4384,7 +4384,7 @@ function UI:CreateWindow(Config)
             MinzUI.Visible = true
         end
 
-        VexUI:Notification({
+        UI:Notification({
             Title = "UI Minimised",
             Desc = isTouch and "Tap Aero button to reopen" or "Press Right Shift to reopen",
             Duration = 4
