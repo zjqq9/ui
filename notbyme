@@ -80,8 +80,8 @@ VexUI.Themes = {
         Background = Color3.fromRGB(0, 0, 0),
         SideBar = Color3.fromRGB(0, 0, 0),
         Text = Color3.fromRGB(255, 255, 255),
-        ElementColor = Color3.fromRGB(10, 10, 10),
-        Outline = Color3.fromRGB(0, 0, 0),
+        ElementColor = Color3.fromRGB(30, 30, 30),
+        Outline = Color3.fromRGB(55, 55, 55),
         Placeholder = Color3.fromRGB(0, 0, 0),
         IconColor = Color3.fromRGB(255, 255, 255),
     },
@@ -1174,14 +1174,14 @@ function UI:CreateWindow(Config)
     TopBarF1.Size = UDim2.new(1, -5 - 5 - 5 - 187, 0, Window.Topbar.Height)
 
     local LibName = VexUI:Create("TextLabel", {
-        Parent = TopBarF1.Frame,
+        Parent = TopBarF3,
         BackgroundTransparency = 1,
         BorderSizePixel = 0,
         RichText = true,
-        Size = UDim2.new(1, 0, 0, 35),
+        Size = UDim2.new(1, 0, 1, 0),
         FontFace = Font.new([[rbxassetid://12187365364]], Enum.FontWeight.SemiBold, Enum.FontStyle.Normal),
         Text = Window.Name,
-        AutomaticSize = "Y",
+        AutomaticSize = "None",
         TextSize = 13,
         ZIndex = 5,
         TextWrapped = true,
@@ -1985,9 +1985,7 @@ function UI:CreateWindow(Config)
             BorderSizePixel = 0,
             ZIndex = 101,
             Parent = TopBarF1,
-            ThemeID = {
-                ImageColor3 = "IconColor"
-            }
+            ImageColor3 = Color3.fromRGB(255, 255, 255),
         }),
         VexUI:Create("ImageButton", {
             AnchorPoint = Vector2.new(0, 0.5),
@@ -2000,9 +1998,7 @@ function UI:CreateWindow(Config)
             BorderSizePixel = 0,
             ZIndex = 101,
             Parent = TopBarF1,
-            ThemeID = {
-                ImageColor3 = "IconColor"
-            }
+            ImageColor3 = Color3.fromRGB(255, 255, 255),
         }),
         VexUI:Create("UIPadding", {
             --PaddingLeft = UDim.new(0, 5),
@@ -4505,7 +4501,7 @@ function UI:CreateWindow(Config)
         }),
     })
 
-    ResizeHandle.Visible = Window.Resizable
+    ResizeHandle.Visible = false
     function UpdateResizeHandlePos()
         ResizeHandle.Position = UDim2.new(0, Main.AbsolutePosition.X + Main.AbsoluteSize.X - 10,0, Main.AbsolutePosition.Y + Main.AbsoluteSize.Y - 10)
     end
