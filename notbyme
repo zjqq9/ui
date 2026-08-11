@@ -1171,7 +1171,7 @@ function UI:CreateWindow(Config)
             }),
         }),
     })
-    TopBarF1.Size = UDim2.new(0,Window.Size.X.Offset - 5 - 5 - 5- 187,0,Window.Topbar.Height)
+    TopBarF1.Size = UDim2.new(1, -5 - 5 - 5 - 187, 0, Window.Topbar.Height)
 
     local LibName = VexUI:Create("TextLabel", {
         Parent = TopBarF1.Frame,
@@ -1186,15 +1186,15 @@ function UI:CreateWindow(Config)
         ZIndex = 5,
         TextWrapped = true,
         TextColor3 = Color3.fromRGB(255, 255, 255),
-        TextXAlignment = Enum.TextXAlignment.Left,
-        TextYAlignment = Window.Author and Enum.TextYAlignment.Top or Enum.TextYAlignment.Center,
+        TextXAlignment = Enum.TextXAlignment.Center,
+        TextYAlignment = Enum.TextYAlignment.Center,
         ThemeID = {
             TextColor3 = "Text"
         }
     }, {
         VexUI:Create("UIPadding", {
-            PaddingLeft = UDim.new(0, Window.Icon and 45 or 12),
-            PaddingTop = Window.Author and UDim.new(0, 6) or UDim.new(0, 0),
+            PaddingLeft = UDim.new(0, 0),
+            PaddingTop = UDim.new(0, 0),
         })
     })
 
@@ -1293,7 +1293,7 @@ function UI:CreateWindow(Config)
 
     local TopBarF3 = VexUI:Create("Frame", {
         Parent = Main.Frame,
-        Size = UDim2.new(0, 187, 0, Window.Topbar.Height),
+        Size = UDim2.new(1, 0, 0, Window.Topbar.Height),
         --ClipsDescendants = true,
         BackgroundColor3 = Color3.fromRGB(33, 33, 33),
         LayoutOrder = 3,
