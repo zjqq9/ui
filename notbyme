@@ -1974,7 +1974,7 @@ function UI:CreateWindow(Config)
             Padding = UDim.new(0, 4),
         }),
         VexUI:Create("ImageButton", {
-            Name = "Minus",
+            Name = "ImageButton",
             Image = IconsV2.GetIcon("minus"),
             BackgroundTransparency = 1,
             LayoutOrder = 1,
