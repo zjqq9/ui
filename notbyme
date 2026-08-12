@@ -1132,6 +1132,27 @@ function UI:CreateWindow(Config)
     TitleLabel.ZIndex = 200
     TitleLabel.Parent = Main
 
+    -- Avatar icon top left
+    local avatarImg = Instance.new("ImageLabel")
+    avatarImg.Name = "AeroAvatar"
+    avatarImg.Size = UDim2.new(0, 28, 0, 28)
+    avatarImg.Position = UDim2.new(0, 8, 0, 8)
+    avatarImg.BackgroundTransparency = 1
+    avatarImg.ScaleType = Enum.ScaleType.Fit
+    avatarImg.ZIndex = 200
+    avatarImg.Parent = Main
+    local avatarCorner = Instance.new("UICorner")
+    avatarCorner.CornerRadius = UDim.new(1, 0)
+    avatarCorner.Parent = avatarImg
+    pcall(function()
+        local userId = game:GetService("Players").LocalPlayer.UserId
+        avatarImg.Image = game:GetService("Players"):GetUserThumbnailAsync(
+            userId,
+            Enum.ThumbnailType.HeadShot,
+            Enum.ThumbnailSize.Size48x48
+        )
+    end)
+
     -- Close button on Main, top right
     local CloseBtn = Instance.new("TextButton")
     CloseBtn.Name = "TitleClose"
