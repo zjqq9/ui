@@ -3520,16 +3520,6 @@ function UI:CreateWindow(Config)
             local DropOpen = false
             local isUserTyping = false
 
-            DropOptionBox.Focused:Connect(function()
-                if Dropdown.Locked then return end
-                isUserTyping = true
-            end)
-
-            DropOptionBox.FocusLost:Connect(function()
-                if Dropdown.Locked then return end
-                isUserTyping = false
-            end)
-
             local function openDropdown()
                 DropOpen = true
                 task.defer(function()
