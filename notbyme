@@ -3149,12 +3149,11 @@ function UI:CreateWindow(Config)
                 ZIndex = 25,
             })
 
-            local BGBox = VexUI:Create("TextBox", {
+            local BGBox = VexUI:Create("TextLabel", {
                 Parent = BGFrame,
                 AnchorPoint = Vector2.new(0.5, 0.5),
                 Position = UDim2.new(0.5, 0, 0.5, 0),
                 BackgroundTransparency = 1,
-                TextTransparency = 0,
                 ZIndex = 16,
                 Size = UDim2.new(1, 0, 1, 0),
                 Text = tostring(Slider.Value.Default or 0),
@@ -3213,24 +3212,6 @@ function UI:CreateWindow(Config)
             local releaseconnection
             local isTouch = false
             local isFocusing = false
-
-            BGBox.Focused:Connect(function()
-                isFocusing = true
-            end)
-
-            BGBox.FocusLost:Connect(function()
-                if Slider.Locked then return end
-                isFocusing = false
-                if tonumber(BGBox.Text) then
-                    local inputValue = tonumber(BGBox.Text)
-                    local clampedValue = math.clamp(inputValue, Slider.Value.Min, Slider.Value.Max)
-                    local roundedValue = math.round(clampedValue / Slider.Step) * Slider.Step
-                    Value = roundedValue
-                    BGBox.Text = tostring(Value)
-                    DropValue.Size = UDim2.new((roundedValue - Slider.Value.Min) / (Slider.Value.Max - Slider.Value.Min),0, 1, 0)
-                    task.spawn(Slider.Callback, roundedValue)
-                end
-            end)
 
             local clampedDefault = math.clamp(Slider.Value.Default, Slider.Value.Min, Slider.Value.Max)
             Value = clampedDefault
@@ -3479,7 +3460,7 @@ function UI:CreateWindow(Config)
                 }
             })
 
-            local DropOptionBox = VexUI:Create("TextBox", {
+            local DropOptionBox = VexUI:Create("TextLabel", {
                 Parent = DropValueFrame,
                 BackgroundTransparency = 1,
                 Position = UDim2.new(0, 8, 0, 0),
