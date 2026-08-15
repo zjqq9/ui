@@ -367,6 +367,7 @@ end
 local UserInputService = game:GetService("UserInputService")
 
 local function enableDragging(frame)
+    if game:GetService("UserInputService").TouchEnabled then return end
     local dragging = false
     local dragStart
     local startPos
@@ -3905,7 +3906,7 @@ function UI:CreateWindow(Config)
             local Keybind = {
                 Title = Config.Title or "Keybind",
                 Desc = Config.Desc or nil,
-                Value = Config.Value or "F",
+                Value = Config.Value or "...",
                 Locked = Config.Locked,
                 Callback = Config.Callback or function() end,
                 SizeY = 40
