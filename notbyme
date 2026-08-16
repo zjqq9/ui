@@ -4371,67 +4371,9 @@ function UI:CreateWindow(Config)
         Main.Visible = false
         
         local isTouch = UserInputService.TouchEnabled
-        MobileBtn.Visible = isTouch
+        MobileBtn.Visible = false -- custom AERO button used instead
         MinzUI.Visible = not isTouch
 
-        -- Standalone notification call so it never fails
-        task.spawn(function()
-            local LP = game:GetService("Players").LocalPlayer
-            local pg = (LP and LP:FindFirstChild("PlayerGui")) or game:GetService("CoreGui")
-            local sg = Instance.new("ScreenGui")
-            sg.Name = "AeroMinNotif"
-            sg.ResetOnSpawn = false
-            sg.DisplayOrder = 99999999
-            sg.Parent = pg
-
-            local f = Instance.new("Frame")
-            f.Size = UDim2.new(0, 230, 0, 50)
-            f.Position = UDim2.new(1, -240, 1, -65)
-            f.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
-            f.BackgroundTransparency = 0.1
-            f.BorderSizePixel = 0
-            f.ZIndex = 99999
-            f.Parent = sg
-
-            local corner = Instance.new("UICorner")
-            corner.CornerRadius = UDim.new(0, 10)
-            corner.Parent = f
-
-            local stroke = Instance.new("UIStroke")
-            stroke.Color = Color3.fromRGB(70, 70, 70)
-            stroke.Thickness = 1
-            stroke.Parent = f
-
-            local title = Instance.new("TextLabel")
-            title.Text = "UI Minimised"
-            title.Size = UDim2.new(1, -16, 0, 20)
-            title.Position = UDim2.new(0, 8, 0, 5)
-            title.BackgroundTransparency = 1
-            title.TextColor3 = Color3.fromRGB(255, 255, 255)
-            title.TextSize = 13
-            title.Font = Enum.Font.GothamBold
-            title.TextXAlignment = Enum.TextXAlignment.Left
-            title.ZIndex = 100000
-            title.Parent = f
-
-            local desc = Instance.new("TextLabel")
-            desc.Text = isTouch and "Tap Aero button to reopen" or "Press Right Shift to reopen"
-            desc.Size = UDim2.new(1, -16, 0, 18)
-            desc.Position = UDim2.new(0, 8, 0, 26)
-            desc.BackgroundTransparency = 1
-            desc.TextColor3 = Color3.fromRGB(180, 180, 180)
-            desc.TextSize = 11
-            desc.Font = Enum.Font.Gotham
-            desc.TextXAlignment = Enum.TextXAlignment.Left
-            desc.ZIndex = 100000
-            desc.Parent = f
-
-            task.delay(4, function()
-                if sg and sg.Parent then
-                    sg:Destroy()
-                end
-            end)
-        end)
     end    
 
     WinElements.ImageButton.MouseButton1Click:Connect(function()
